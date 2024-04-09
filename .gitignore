@@ -19,7 +19,7 @@
 # misc
 .DS_Store
 *.pem
-.drawio
+.diagrams
 
 # debug
 npm-debug.log*
