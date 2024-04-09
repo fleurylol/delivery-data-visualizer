@@ -1,3 +1,15 @@
 {
-  "sqltools.connections": []
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "driver": "MySQL",
+      "connectString": "mysql://dbuser:11948906HannahB3ar!@172.233.215.207:3018/cfadelivery",
+      "name": "cfa-delivery"
+    }
+  ]
 }
