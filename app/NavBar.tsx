@@ -39,9 +39,9 @@ const NavBar = () => {
           <li
             key={link.name}
             className={classnames({
-              'flex gap-x-2 p-3 hover:bg-red-600 w-full': true,
+              'flex gap-x-2 p-3 hover:text-white w-full': true,
               'border-r-4': link.href === currentPath,
-              'text-stone-300': link.href !== currentPath,
+              'text-red-300': link.href !== currentPath,
             })}
           >
             <link.icon />
