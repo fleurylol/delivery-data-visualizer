@@ -33,13 +33,13 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="bg-red-500 text-white w-fit h-screen">
+    <nav className="bg-red-500 text-white w-40 h-screen">
       <ul className="text-center">
         {navLinks.map((link) => (
           <li
             key={link.name}
             className={classnames({
-              'flex gap-x-2 p-3 hover:bg-red-600': true,
+              'flex gap-x-2 p-3 hover:bg-red-600 w-full': true,
               'border-r-4': link.href === currentPath,
               'text-stone-300': link.href !== currentPath,
             })}
