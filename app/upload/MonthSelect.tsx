@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+"use client";
+import React, { useContext, useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { MonthContext } from "@/lib/Context";
 
 const MonthSelect = () => {
-  const [selectedMonth, setSelectedMonth] = useState("Select Month");
+  const [selectedMonth, setSelectedMonth] = useContext(MonthContext);
   const months = [
     "January",
     "February",
