@@ -20,6 +20,8 @@
 .DS_Store
 *.pem
 .flowcharts
+.prettierrc
+app/upload/MonthSelectGrid.tsx
 
 # debug
 npm-debug.log*
