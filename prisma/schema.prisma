@@ -14,22 +14,21 @@ datasource db {
 }
 
 model Delivery {
-  id         String   @id @default(cuid())
-  address   String
-  total    Int
-  type    String @default("unknown")
+  id           String  @id @default(cuid())
+  address      String  @unique
+  type         String  @default("unknown")
   businessName String?
-  businessId String?
-  jan_total Int @default(0)
-  feb_total Int @default(0)
-  mar_total Int @default(0)
-  apr_total Int @default(0)
-  may_total Int @default(0)
-  jun_total Int @default(0)
-  jul_total Int @default(0)
-  aug_total Int @default(0)
-  sep_total Int @default(0)
-  oct_total Int @default(0)
-  nov_total Int @default(0)
-  dec_total Int @default(0)
+  businessId   String?
+  jan_total    Int     @default(0)
+  feb_total    Int     @default(0)
+  mar_total    Int     @default(0)
+  apr_total    Int     @default(0)
+  may_total    Int     @default(0)
+  jun_total    Int     @default(0)
+  jul_total    Int     @default(0)
+  aug_total    Int     @default(0)
+  sep_total    Int     @default(0)
+  oct_total    Int     @default(0)
+  nov_total    Int     @default(0)
+  dec_total    Int     @default(0)
 }

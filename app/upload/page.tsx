@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import MonthSelect from "./MonthSelect";
 import { Button } from "@/components/ui/button";
 import { MonthContext } from "@/lib/Context";
+import axios from "axios";
 
 const Upload = () => {
   const [data, setData] = useState<{ [key: string]: number } | null>(null);
@@ -66,9 +67,7 @@ const Upload = () => {
             </>
           )}
           <Button
-            onClick={() => {
-              console.log(data, selectedMonth);
-            }}
+            onClick={() => handleSubmit(data!, selectedMonth)}
             className="mt-2 w-full"
           >
             Submit Data
@@ -95,4 +94,21 @@ const countAddress = (address: string[]) => {
   );
 
   return addressCounted;
+};
+
+const handleSubmit = async (data: { [key: string]: number }, month: string) => {
+  try {
+    for (const [address, count] of Object.entries(data)) {
+      const checkAddress = await axios.get("api/upload", {
+        params: { address },
+      });
+      if (checkAddress.data.error) {
+        console.error("Address not found: ", address);
+        continue;
+      }
+      await axios.patch("api/upload", { address, count, month });
+    }
+  } catch (error) {
+    console.error("Error saving data: ", error);
+  }
 };
