@@ -32,3 +32,9 @@ model Delivery {
   nov_total    Int     @default(0)
   dec_total    Int     @default(0)
 }
+
+model MonthStatus {
+  id    Int     @id @default(autoincrement())
+  month String  @unique
+  data  Boolean @default(false)
+}
